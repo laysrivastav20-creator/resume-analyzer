@@ -12,7 +12,7 @@ export async function POST(req: NextRequest) {
     if (!process.env.GEMINI_API_KEY) {
       return NextResponse.json({ error: "Gemini API key is not configured." }, { status: 500 });
     }
-    const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash-exp" });
+    const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash-lite" });
     const prompt = `You are an expert resume reviewer. Analyze the following resume and return a JSON object ONLY — no markdown, no explanation, no backticks.
 
 The JSON must follow this exact structure:
